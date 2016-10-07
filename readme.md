@@ -42,11 +42,11 @@ $post->addMeta('third', 'value2');
 
 ```
 #### Get meta
-Remember that you can add multiple meta for the same key, so by default, get meta don't touch the database. 
+Remember that you can add multiple meta for the same key, so by default, `getMeta()` returns an array, even if there are just one value for that key. You can use the `single` param to get the first value directly 
 
 `getMeta($key, $single = false, $cacheAll = true)`
 
-Eager loading: If `$cacheAll` is set to true, when you getMeta you retrieve all the metas of the model, so the next `getMeta` is
+Eager loading: If `$cacheAll` is set to true, when you getMeta you retrieve all the metas of the model, so the next `getMeta` call don't touch the database. 
 
 ```php
 $post->getMeta('key'); // ['value']
@@ -66,6 +66,12 @@ $post->loadMeta();
 //Then you can 
 dd($post->metadata->key); //['value']
 
+```
+
+#### Remove meta
+```php
+//Load $post->metadata variable
+$post->removeMeta('key'); //remove all the ocurrences of metas with that key in the current model
 ```
 
 
