@@ -2,7 +2,7 @@
     "name": "freshwork/metable",
     "description": "Add metadata to your eloquent models",
     "require": {
-        "laravel/laravel": "5.2"
+        "laravel/laravel": "^5.2"
     },
     "license": "MIT",
     "authors": [
