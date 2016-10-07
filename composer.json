@@ -4,6 +4,11 @@
     "require": {
         "laravel/framework": "~5.2"
     },
+    "autoload": {
+        "psr-4": {
+            "Freshwork\\Metable\\": "src"
+        }
+    },
     "license": "MIT",
     "authors": [
         {
